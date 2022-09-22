@@ -1,0 +1,75 @@
+@import url("https://fonts.googleapis.com/css2?family=Rampart+One&display=swap");
+
+$coloris: coral;
+
+.navbar {
+  position: fixed;
+  top: 0;
+  height: 2rem;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  padding: 1rem 2rem;
+  background: rgba(0, 0, 0, 0.83);
+  overflow: hidden;
+}
+
+@mixin navbar-items() {
+  font-family: "Rampart One", cursive;
+  color: white;
+  font-size: 1.2rem;
+  &:hover {
+    color: $coloris;
+    transform: scale(1.1);
+    cursor: pointer;
+  }
+}
+
+.sections-one {
+  flex: 1;
+  padding: 1rem 0;
+  object-fit: cover;
+}
+.logoimage {
+  max-height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+.sections-two {
+  flex: 8;
+}
+.sections-two {
+  ul {
+    display: flex;
+    list-style: none;
+    gap: 3%;
+    li,
+    button {
+      background: transparent;
+      border: none;
+      @include navbar-items();
+      a {
+        @include navbar-items();
+        text-decoration: none;
+      }
+    }
+  }
+}
+.sections-three {
+  flex: 2;
+  .search {
+    @include navbar-items();
+    display: flex;
+    align-items: center;
+    gap: 5%;
+    input {
+      height: 90%;
+      border-radius: 0.8rem;
+      padding: 0.3rem 0.6rem;
+      &:focus {
+        outline-color: $coloris;
+        // outline-width: thin;
+      }
+    }
+  }
+}

@@ -1,0 +1,38 @@
+@import url("https://fonts.googleapis.com/css2?family=Merienda&display=swap");
+.chats-left {
+  display: flex;
+  margin-top: 5%;
+  justify-content: start;
+}
+.chats-right {
+  display: flex;
+  margin-top: 5%;
+  justify-content: end;
+}
+.chats {
+  padding: 4px 8px;
+  max-width: 50%;
+  color: aliceblue;
+  height: max-content;
+  box-shadow: 7px 6px 15px black;
+  border-radius: 0.5rem;
+  border: solid 0.5px darkgray;
+  background: rgb(0, 212, 255);
+  background: linear-gradient(
+    90deg,
+    rgba(0, 212, 255, 1) 0%,
+    rgba(121, 9, 15, 0.9321266968325792) 0%,
+    rgba(24, 13, 0, 1) 100%
+  );
+  font-weight: 600;
+  font-size: 0.9rem;
+  font-family: "Merienda", cursive;
+}
+
+.chat-right {
+  color: black;
+  background: white;
+}
+.buttom-marg {
+  margin-bottom: 20%;
+}

@@ -1,0 +1,32 @@
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script&family=Roboto+Slab&display=swap");
+
+.conversation-main {
+  width: calc(100%-2%);
+  height: 5vh;
+  background-color: lightsalmon;
+  display: flex;
+  padding: 0.2rem 1rem;
+  overflow: hidden;
+  border-bottom: solid 1px black;
+}
+
+.conversation-profile-pic {
+  flex: 2;
+  img {
+    width: 3rem;
+    height: 3rem;
+    object-fit: cover;
+    border-radius: 2rem;
+  }
+}
+.conversation-name-desc {
+  flex: 15;
+  .name {
+    color: black;
+    font-weight: 700;
+    font-family: "Roboto Slab", serif;
+  }
+  .desc {
+    font-family: "Dancing Script", cursive;
+  }
+}
