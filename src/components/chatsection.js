@@ -102,7 +102,7 @@ const Chatsection = () => {
           <Chats sides={sides} colors={colors} />
           <Chats sides={sides} colors={colors} />
           <Chats sides={sides} colors={colors} />
-          <Chats sides={sides} colors={colors} />
+          <Chats sides={sides} colors={colors} lasts={true} />
         </div>
         <div className="texts-input">
           <input type="text" placeholder="Aa" />
