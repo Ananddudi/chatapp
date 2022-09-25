@@ -30,6 +30,7 @@
     padding: 1rem 2rem;
     border: solid 2px coral;
     overflow: hidden;
+
     .cross {
       position: absolute;
       color: coral;
@@ -102,10 +103,30 @@
           cursor: pointer;
         }
       }
+      .account {
+        color: coral;
+        display: flex;
+        justify-content: center;
+        gap: 0.1rem;
+        align-items: center;
+        flex-direction: row;
+        font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+        button {
+          background: transparent;
+          border: none;
+          font-size: 1rem;
+          font-weight: 700;
+          color: green;
+          cursor: pointer;
+          &:hover {
+            color: white;
+          }
+        }
+      }
     }
   }
   .modelwidth {
-    height: 24vh;
+    height: 26vh;
   }
 }
 

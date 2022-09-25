@@ -1,18 +1,35 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import logo from "../assets/logo.png";
 import "./navbar.scss";
 import Auth from "./auth";
 
-export const Navbar = () => {
+export const Navbar = ({ register, openchat }) => {
   const [popup, setPopup] = useState({
     popup: false,
     message: "",
   });
 
-  const closemodel = () => {
-    setPopup({ type: false, message: "" });
+  const opensignup = () => {
+    setPopup({ popup: true, message: "sign up" });
   };
+
+  const closemodel = () => {
+    if (!register) {
+      setPopup({ popup: false, message: "" });
+    }
+  };
+  const closes = () => {
+    setPopup({ popup: false, message: "" });
+  };
+
+  useEffect(() => {
+    if (register) {
+      setPopup({ popup: true, message: "sign in" });
+    } else {
+      setPopup({ popup: false, message: "" });
+    }
+  }, [register]);
 
   return (
     <>
@@ -25,20 +42,28 @@ export const Navbar = () => {
             <li className="list-items">
               <Link to="/profile">Profile</Link>
             </li>
-            <li className="list-items">
-              <button
-                onClick={() => setPopup({ popup: true, message: "sign up" })}
-              >
-                Sign Up
-              </button>
-            </li>
-            <li className="list-items">
-              <button
-                onClick={() => setPopup({ popup: true, message: "sign in" })}
-              >
-                Sign In
-              </button>
-            </li>
+            {register && (
+              <>
+                <li className="list-items">
+                  <button
+                    onClick={() =>
+                      setPopup({ popup: true, message: "sign up" })
+                    }
+                  >
+                    Sign Up
+                  </button>
+                </li>
+                <li className="list-items">
+                  <button
+                    onClick={() =>
+                      setPopup({ popup: true, message: "sign in" })
+                    }
+                  >
+                    Sign In
+                  </button>
+                </li>
+              </>
+            )}
           </ul>
         </div>
         <div className="sections-three">
@@ -48,7 +73,15 @@ export const Navbar = () => {
           </div>
         </div>
       </div>
-      {popup.popup && <Auth message={popup.message} close={closemodel} />}
+      {popup.popup && (
+        <Auth
+          openchat={openchat}
+          message={popup.message}
+          close={closemodel}
+          closes={closes}
+          opensignup={opensignup}
+        />
+      )}
     </>
   );
 };
