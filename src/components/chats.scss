@@ -2,12 +2,12 @@
 .chats-left {
   display: flex;
   margin-top: 5%;
-  justify-content: start;
+  justify-content: flex-start;
 }
 .chats-right {
   display: flex;
   margin-top: 5%;
-  justify-content: end;
+  justify-content: flex-end;
 }
 .chats {
   padding: 4px 8px;
